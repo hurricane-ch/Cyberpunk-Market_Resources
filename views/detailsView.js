@@ -19,8 +19,8 @@ const template = (item, isOwner) => html`
               ${isOwner
           ? html`
               <div id="action-buttons">
-                <a href="/edit/${item._id}" id="edit-btn">Edit</a>
-                <a href="/delete/${item._id}" id="delete-btn">Delete</a>
+                <a href="/dashboard/${item._id}/edit" id="edit-btn">Edit</a>
+                <a href="/dashboard/${item._id}/delete" id="delete-btn">Delete</a>
               </div>`
           : ''}
            </div>
