@@ -29,16 +29,11 @@ const template = (item, isOwner) => html`
 `;
 
 export default async function detailsView(ctx) {
-    console.log('detailsView function called');
     const itemId = ctx.params.itemId;
     const item = await getOne(itemId);
 
     const userData = getUserData();
-    const isOwner = userData._id === item.ownerId;
-
-    console.log('User ID:', userData._id, typeof userData._id);
-    console.log('Owner ID:', item.ownerId, typeof item.ownerId);
-    
+    const isOwner = userData._id === item._ownerId;
 
     render(template(item, isOwner));
 }
