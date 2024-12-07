@@ -9,7 +9,7 @@ const template = (items) => html`
           (item) => html`
             <div class="item"> 
                 <img src="${item.imageUrl}" alt="${item.item}" />
-              <h3 class="model">${item.model}</h3>
+              <h3 class="model">${item.item}</h3>
               <div class="item-info">
                 <p class="price">Price: €${item.price}</p>
                 <p class="availability">${item.availability}</p>

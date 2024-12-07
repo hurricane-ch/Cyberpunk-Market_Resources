@@ -12,8 +12,8 @@ const template = (item, isOwner) => html`
             <div id="info-wrapper">
               <div id="details-description">
                 <p class="details-price">Price: €${item.price}</p>
-                <p class="details-availability"> ${item.availability}</p>
-                <p class="type">${item.type}</p>
+                <p class="details-availability">${item.availability}</p>
+                <p class="type">Type: ${item.type}</p>
                 <p id="item-description">${item.description}</p>
               </div>
               ${isOwner
