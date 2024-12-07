@@ -34,7 +34,7 @@ const template = (onSubmit) => html`
 `;
 
 export default async function registerView(ctx) {
-    render(template(registerFormSubmitHandler));
+    render(template(registerFormSubmitHandler.bind(ctx)));
 }
 
 async function registerFormSubmitHandler(e) {
@@ -46,11 +46,13 @@ async function registerFormSubmitHandler(e) {
     const rePassword = formData.get('re-password')
 
     if(email === '' || password === '' || rePassword === '') {
-        return alert('Fields are required!');
+        // return alert('Fields are required!');
+        return this.showNotification('Fields are required!');
     }
 
     if(password !== rePassword) {
-        return alert("Passwords don't match");
+        // return alert("Passwords don't match");
+        return this.showNotification('Passwords don\'t match');
     }
 
     try {

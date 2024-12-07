@@ -35,7 +35,8 @@ async function editFormSubmitHandler(e) {
     const itemId = this.params.itemId;
 
     if (!Object.values(data).every(value => !!value)) {
-        return alert("All fields are required!");
+        // return alert("All fields are required!");
+        return this.showNotification("All fields are required!");
     }
 
     try {

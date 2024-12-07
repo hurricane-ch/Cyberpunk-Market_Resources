@@ -20,7 +20,7 @@ const template = (onSubmit) => html`
 `;
 
 export default async function createView(ctx) {
-    render(template(createFormSubmitHandler));
+    render(template(createFormSubmitHandler.bind(ctx)));
 }
 
 async function createFormSubmitHandler(e) {
@@ -30,7 +30,8 @@ async function createFormSubmitHandler(e) {
     const data = Object.fromEntries(formData.entries());
 
     if (!Object.values(data).every(value => !!value)) {
-        return alert("All fields are required!");
+        // return alert("All fields are required!");
+        return this.showNotification("All fields are required!");
     }
 
     try {

@@ -25,7 +25,7 @@ const template = (onSubmit) => html`
 `;
 
 export default async function loginView(ctx) {
-    render(template(loginFormSubmitHandler));
+    render(template(loginFormSubmitHandler.bind(ctx)));
 }
 
 async function loginFormSubmitHandler(e) {
@@ -36,7 +36,8 @@ async function loginFormSubmitHandler(e) {
     const password = formData.get('password')
 
     if(email === '' || password === '') {
-        return alert('Fields are required!');
+        // return alert('Fields are required!');
+        return this.showNotification('Fields are required!');
     }
 
     try {

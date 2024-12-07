@@ -1,5 +1,6 @@
 import page from "./lib/page.js";
 import { navigationMiddleware } from "./middlewares/navigationMiddleware.js";
+import { notificationsMiddleware } from "./middlewares/notificationMiddleware.js";
 import createView from "./views/createView.js";
 import dashboadrView from "./views/dashboardView.js";
 import deleteView from "./views/deleteView.js";
@@ -11,6 +12,7 @@ import logoutView from "./views/logoutView.js";
 import registerView from "./views/registerView.js";
 
 page(navigationMiddleware);
+page(notificationsMiddleware)
 
 page('/', homeView);
 page('/dashboard', dashboadrView);
